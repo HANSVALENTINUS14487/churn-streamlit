@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 import pandas as pd
 
-model = joblib.load("model/rf_churn_model.pkl")
+model = joblib.load("/rf_churn_model.pkl")
 
 st.title("Customer Churn Prediction")
 
@@ -16,3 +16,4 @@ if st.button("Predict"):
     })
     pred = model.predict(X)
     st.write("Churn:", "Yes" if pred[0] == 1 else "No")
+
